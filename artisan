@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoload = __DIR__ . '/vendor/autoload.php';
+if (is_file($autoload)) {
+    require $autoload;
+} else {
+    spl_autoload_register(static function (string $class): void {
+        $prefix = 'CommunityCatalogue\\';
+        if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
+            return;
+        }
+
+        $relative = substr($class, strlen($prefix));
+        $path = __DIR__ . '/src/' . str_replace('\\', '/', $relative) . '.php';
+        if (is_file($path)) {
+            require $path;
+        }
+    });
+}
+
+use CommunityCatalogue\CatalogueImporter\ConsoleApplication;
+
+$app = new ConsoleApplication(__DIR__);
+exit($app->run($argv));

@@ -1,0 +1,141 @@
+{
+    "run_id": 1,
+    "warning_count": 15,
+    "warnings": [
+        {
+            "id": 1,
+            "draft_product_id": 1,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "1 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+        },
+        {
+            "id": 2,
+            "draft_product_id": 1,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "1 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+        },
+        {
+            "id": 3,
+            "draft_product_id": 1,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "1 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+        },
+        {
+            "id": 4,
+            "draft_product_id": 2,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "2 | Floor tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+        },
+        {
+            "id": 5,
+            "draft_product_id": 2,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "2 | Floor tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+        },
+        {
+            "id": 6,
+            "draft_product_id": 2,
+            "code": "MALFORMED_IMAGE_REF",
+            "severity": "review",
+            "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+            "source_field": "image_ref",
+            "source_excerpt": "2 | Floor tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+        },
+        {
+            "id": 7,
+            "draft_product_id": 2,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "2 | Floor tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+        },
+        {
+            "id": 8,
+            "draft_product_id": 3,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "3 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+        },
+        {
+            "id": 9,
+            "draft_product_id": 3,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "3 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+        },
+        {
+            "id": 10,
+            "draft_product_id": 3,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "3 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+        },
+        {
+            "id": 11,
+            "draft_product_id": 4,
+            "code": "POSSIBLE_DUPLICATE",
+            "severity": "review",
+            "message": "This draft looks like a duplicate of an earlier item in the same import run.",
+            "source_field": "name",
+            "source_excerpt": "4 | Cut-resistant shop gloves | safety | large carton, 24 pair | images/cut-resistant-gloves-large.png | material=aramid knit; pack=24 pair"
+        },
+        {
+            "id": 12,
+            "draft_product_id": 5,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "5 | Mini brush refill bundle | paint | assorted 1-2 in brush heads | images/mini-brush-refills.png | count=tbd; note=supplier scan shadow covers count"
+        },
+        {
+            "id": 13,
+            "draft_product_id": 5,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "5 | Mini brush refill bundle | paint | assorted 1-2 in brush heads | images/mini-brush-refills.png | count=tbd; note=supplier scan shadow covers count"
+        },
+        {
+            "id": 14,
+            "draft_product_id": 5,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "5 | Mini brush refill bundle | paint | assorted 1-2 in brush heads | images/mini-brush-refills.png | count=tbd; note=supplier scan shadow covers count"
+        },
+        {
+            "id": 15,
+            "draft_product_id": 6,
+            "code": "MALFORMED_IMAGE_REF",
+            "severity": "review",
+            "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+            "source_field": "image_ref",
+            "source_excerpt": "6 | Bolt organizer labels | labeling | 120 labels, A6 sheets | images/bolt-label s.png | use=fastener drawers"
+        }
+    ]
+}

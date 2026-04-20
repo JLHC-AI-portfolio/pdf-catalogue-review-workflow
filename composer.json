@@ -1,0 +1,31 @@
+{
+  "name": "jlhc-ai-dev/community-catalogue-importer",
+  "description": "Laravel-compatible PHP workflow for turning workshop catalogue PDFs into reviewable draft item records.",
+  "type": "project",
+  "license": "LicenseRef-Portfolio-Review",
+  "authors": [
+    {
+      "name": "Juan Luis Herrera Cortijo",
+      "email": "juan.luis.herrera.cortijo@gmail.com",
+      "homepage": "https://github.com/JLHerreraCortijo",
+      "role": "Author"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/JLHerreraCortijo"
+  },
+  "require": {
+    "php": ">=8.2",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "CommunityCatalogue\\": "src/"
+    }
+  },
+  "scripts": {
+    "test:php": "php tests/php/ImportContractTest.php"
+  }
+}
