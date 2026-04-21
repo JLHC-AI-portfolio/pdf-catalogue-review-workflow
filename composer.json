@@ -1,6 +1,6 @@
 {
-  "name": "jlhc-ai-dev/community-catalogue-importer",
-  "description": "Laravel-compatible PHP workflow for turning workshop catalogue PDFs into reviewable draft item records.",
+  "name": "jlhc-ai-portfolio/pdf-catalogue-review-workflow",
+  "description": "Review-first PDF catalogue importer with synthetic multi-layout fixtures, OCR preprocessing, and human review packets.",
   "type": "project",
   "license": "LicenseRef-Portfolio-Review",
   "authors": [
