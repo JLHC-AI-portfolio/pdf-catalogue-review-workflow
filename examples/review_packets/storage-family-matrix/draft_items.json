@@ -1,0 +1,695 @@
+{
+    "run": {
+        "id": 1,
+        "source_file": "examples/catalogues/storage-family-matrix.pdf",
+        "source_kind": "contract_json",
+        "layout_id": "storage-family-matrix",
+        "draft_item_count": 9,
+        "warning_count": 29,
+        "created_at": "2026-04-21T03:11:48+00:00",
+        "database": "/tmp/community-catalogue-packet-matrix-metadata.sqlite",
+        "extraction_path": "fallback_contract",
+        "extractor_provider": "not_used"
+    },
+    "items": [
+        {
+            "name": "Clear bin tower - 6 bin",
+            "category": "storage",
+            "size_or_spec": "6 bins, 22 x 14 x 38 in",
+            "image_ref": "images/clear-bin-tower-family.png",
+            "attributes": {
+                "bin_count": "6",
+                "color": "clear",
+                "shared_image": "images/clear-bin-tower-family.png",
+                "note": "verify caster option",
+                "family": "Clear bin tower series",
+                "variant": "BT-06"
+            },
+            "confidence": 0.72,
+            "warnings": [
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option",
+            "id": 1,
+            "row_number": 1,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 1,
+                    "draft_product_id": 1,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                },
+                {
+                    "id": 2,
+                    "draft_product_id": 1,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                },
+                {
+                    "id": 3,
+                    "draft_product_id": 1,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-06 | Clear bin tower - 6 bin | 6 bins, 22 x 14 x 38 in | bin_count=6; color=clear; shared_image=images/clear-bin-tower-family.png | verify caster option"
+                }
+            ]
+        },
+        {
+            "name": "Clear bin tower - 9 bin",
+            "category": "storage",
+            "size_or_spec": "9 bins, approx 22 x 14 x 52 in",
+            "image_ref": "images/clear-bin-tower-family.png",
+            "attributes": {
+                "bin_count": "9",
+                "color": "clear",
+                "shared_image": "images/clear-bin-tower-family.png",
+                "note": "height rounded from supplier matrix",
+                "family": "Clear bin tower series",
+                "variant": "BT-09"
+            },
+            "confidence": 0.58,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix",
+            "id": 2,
+            "row_number": 2,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 4,
+                    "draft_product_id": 2,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "id": 5,
+                    "draft_product_id": 2,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "id": 6,
+                    "draft_product_id": 2,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                },
+                {
+                    "id": 7,
+                    "draft_product_id": 2,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-09 | Clear bin tower - 9 bin | 9 bins, approx 22 x 14 x 52 in | bin_count=9; color=clear; shared_image=images/clear-bin-tower-family.png | height rounded from supplier matrix"
+                }
+            ]
+        },
+        {
+            "name": "Clear bin tower - 12 bin",
+            "category": "storage",
+            "size_or_spec": "12 bins; dimensions see footnote 4",
+            "image_ref": "images/clear-bin-tower-family.png",
+            "attributes": {
+                "bin_count": "12",
+                "color": "clear",
+                "shared_image": "images/clear-bin-tower-family.png",
+                "note": "footnote continues on next page",
+                "family": "Clear bin tower series",
+                "variant": "BT-12"
+            },
+            "confidence": 0.58,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page",
+            "id": 3,
+            "row_number": 3,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 8,
+                    "draft_product_id": 3,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "id": 9,
+                    "draft_product_id": 3,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "id": 10,
+                    "draft_product_id": 3,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                },
+                {
+                    "id": 11,
+                    "draft_product_id": 3,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Clear bin tower series; Category: storage; Shared image: images/clear-bin-tower-family.png; BT-12 | Clear bin tower - 12 bin | 12 bins; dimensions see footnote 4 | bin_count=12; color=clear; shared_image=images/clear-bin-tower-family.png | footnote continues on next page"
+                }
+            ]
+        },
+        {
+            "name": "Label roll organizer - 4 rail",
+            "category": "paint-labeling",
+            "size_or_spec": "4 rails, accepts mixed roll widths",
+            "image_ref": "images/label-roll-organizer-family.png",
+            "attributes": {
+                "rails": "4",
+                "mount": "wall",
+                "shared_image": "images/label-roll-organizer-family.png",
+                "note": "roll width range not explicit",
+                "family": "Label roll organizer family",
+                "variant": "LR-04"
+            },
+            "confidence": 0.66,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit",
+            "id": 4,
+            "row_number": 4,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 12,
+                    "draft_product_id": 4,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                },
+                {
+                    "id": 13,
+                    "draft_product_id": 4,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                },
+                {
+                    "id": 14,
+                    "draft_product_id": 4,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-04 | Label roll organizer - 4 rail | 4 rails, accepts mixed roll widths | rails=4; mount=wall; shared_image=images/label-roll-organizer-family.png | roll width range not explicit"
+                }
+            ]
+        },
+        {
+            "name": "Label roll organizer - 8 rail",
+            "category": "paint-labeling",
+            "size_or_spec": "8 rails; 18 in x about 24 in",
+            "image_ref": "images/label-roll-organizer-family.png",
+            "attributes": {
+                "rails": "8",
+                "mount": "wall",
+                "shared_image": "images/label-roll-organizer-family.png",
+                "note": "dimension rounded",
+                "family": "Label roll organizer family",
+                "variant": "LR-08"
+            },
+            "confidence": 0.58,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded",
+            "id": 5,
+            "row_number": 5,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 15,
+                    "draft_product_id": 5,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "id": 16,
+                    "draft_product_id": 5,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "id": 17,
+                    "draft_product_id": 5,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                },
+                {
+                    "id": 18,
+                    "draft_product_id": 5,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08 | Label roll organizer - 8 rail | 8 rails; 18 in x about 24 in | rails=8; mount=wall; shared_image=images/label-roll-organizer-family.png | dimension rounded"
+                }
+            ]
+        },
+        {
+            "name": "Label roll organizer accessory bin",
+            "category": "paint-labeling",
+            "size_or_spec": "accessory bin for LR-08; image shared",
+            "image_ref": "images/label-roll-organizer-family.png",
+            "attributes": {
+                "compatible": "LR-08",
+                "shared_image": "images/label-roll-organizer-family.png",
+                "note": "accessory should not be merged with parent",
+                "family": "Label roll organizer family",
+                "variant": "LR-08A"
+            },
+            "confidence": 0.8,
+            "warnings": [
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08A | Label roll organizer accessory bin | accessory bin for LR-08; image shared | compatible=LR-08; shared_image=images/label-roll-organizer-family.png | accessory should not be merged with parent"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08A | Label roll organizer accessory bin | accessory bin for LR-08; image shared | compatible=LR-08; shared_image=images/label-roll-organizer-family.png | accessory should not be merged with parent",
+            "id": 6,
+            "row_number": 6,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 19,
+                    "draft_product_id": 6,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Label roll organizer family; Category: paint labeling; Shared image: images/label-roll-organizer-family.png; LR-08A | Label roll organizer accessory bin | accessory bin for LR-08; image shared | compatible=LR-08; shared_image=images/label-roll-organizer-family.png | accessory should not be merged with parent"
+                }
+            ]
+        },
+        {
+            "name": "Oil-only station refill",
+            "category": "safety",
+            "size_or_spec": "100 pads; 2 socks; about 20 kg shipping",
+            "image_ref": "images/absorbent-station-family.png",
+            "attributes": {
+                "fluid": "oil",
+                "pack": "station refill",
+                "shared_image": "images/absorbent-station-family.png",
+                "note": "shipping weight estimated",
+                "family": "Absorbent station refill matrix",
+                "variant": "AS-OIL"
+            },
+            "confidence": 0.58,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                }
+            ],
+            "source_page": 3,
+            "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated",
+            "id": 7,
+            "row_number": 7,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 20,
+                    "draft_product_id": 7,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "id": 21,
+                    "draft_product_id": 7,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "id": 22,
+                    "draft_product_id": 7,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                },
+                {
+                    "id": 23,
+                    "draft_product_id": 7,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-OIL | Oil-only station refill | 100 pads; 2 socks; about 20 kg shipping | fluid=oil; pack=station refill; shared_image=images/absorbent-station-family.png | shipping weight estimated"
+                }
+            ]
+        },
+        {
+            "name": "Universal station refill",
+            "category": "safety",
+            "size_or_spec": "100 pads; 2 socks; mixed absorbency",
+            "image_ref": "images/absorbent-station-family.png",
+            "attributes": {
+                "fluid": "universal",
+                "pack": "station refill",
+                "shared_image": "images/absorbent-station-family.png",
+                "note": "mixed absorbency must be reviewed",
+                "family": "Absorbent station refill matrix",
+                "variant": "AS-UNI"
+            },
+            "confidence": 0.66,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                }
+            ],
+            "source_page": 3,
+            "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed",
+            "id": 8,
+            "row_number": 8,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 24,
+                    "draft_product_id": 8,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                },
+                {
+                    "id": 25,
+                    "draft_product_id": 8,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                },
+                {
+                    "id": 26,
+                    "draft_product_id": 8,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-UNI | Universal station refill | 100 pads; 2 socks; mixed absorbency | fluid=universal; pack=station refill; shared_image=images/absorbent-station-family.png | mixed absorbency must be reviewed"
+                }
+            ]
+        },
+        {
+            "name": "Station label replacement set",
+            "category": "safety",
+            "size_or_spec": "labels only; see chart L-4",
+            "image_ref": "images/absorbent-station-family.png",
+            "attributes": {
+                "pack": "labels",
+                "compatible": "AS station",
+                "shared_image": "images/absorbent-station-family.png",
+                "note": "category inherited from family may be misleading",
+                "family": "Absorbent station refill matrix",
+                "variant": "AS-LAB"
+            },
+            "confidence": 0.66,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                }
+            ],
+            "source_page": 3,
+            "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading",
+            "id": 9,
+            "row_number": 9,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 27,
+                    "draft_product_id": 9,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                },
+                {
+                    "id": 28,
+                    "draft_product_id": 9,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                },
+                {
+                    "id": 29,
+                    "draft_product_id": 9,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Family Matrix: Absorbent station refill matrix; Category: safety; Shared image: images/absorbent-station-family.png; AS-LAB | Station label replacement set | labels only; see chart L-4 | pack=labels; compatible=AS station; shared_image=images/absorbent-station-family.png | category inherited from family may be misleading"
+                }
+            ]
+        }
+    ]
+}

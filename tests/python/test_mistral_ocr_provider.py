@@ -28,7 +28,7 @@ def test_mistral_ocr_response_is_converted_to_parser_text():
     assert text.startswith("--- PAGE 1 ---")
     assert "Safety glasses refill" in text
 
-    payload = parse_catalogue_text(text, source_file="examples/catalogues/workshop-layout-a.pdf")
+    payload = parse_catalogue_text(text, source_file="unit-fixtures/mistral-layout-a.md")
 
     assert payload["layout_id"] == "workshop-layout-a"
     assert payload["items"][0]["name"] == "Safety glasses refill"

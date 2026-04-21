@@ -1,21 +1,22 @@
 # Community Catalogue Importer
 
-Prepare a workshop catalogue import for review: the checked-in packet shows 6 draft item records, 15 review warnings, and the source evidence a person should check before accepting any item.
+Prepare a workshop catalogue import for review: the checked-in packet set shows three catalogue layouts plus one live OCR sample, with the source evidence a person should check before accepting any item.
 
-Start with the human-readable proof surface: [examples/review_packet/index.html](examples/review_packet/index.html). It shows the source fixture, detected layout, draft count, warning count, draft table, coordinator decision cues, and one evidence-to-decision example before any raw JSON needs to be opened.
+Start with the packet index: [examples/review_packets/README.md](examples/review_packets/README.md). For the quickest rendered proof surface after cloning, open [examples/review_packets/municipal-maintenance-linecard/index.html](examples/review_packets/municipal-maintenance-linecard/index.html). Each packet shows the source fixture, extraction path, extractor provider, detected layout, draft count, warning count, draft table, coordinator decision cues, and one evidence-to-decision example before any raw JSON needs to be opened.
 
 One quick decision cue:
 
 | Source evidence | Warning surfaced | Review cue |
 | --- | --- | --- |
 | `S/M/L mixed carton` | ambiguous size and low confidence | confirm the size mix before accepting the draft |
-| `images/bolt-label s.png` | malformed image reference | correct the asset path before importing |
+| `see chart C-2 for adhesive` | cross-page reference | open the referenced chart before approving the record |
+| `floor-tape-set.png` | malformed image reference | correct the asset path before importing |
 
 When browsing on GitHub, use this README first; GitHub shows checked-in HTML as source markup. After cloning, open the packet locally or run the 60-second check below to render the same review surface from scratch.
 
 ## The Situation
 
-A community workshop or tool library receives small catalogue-like sheets before shared item records exist. The sheets are readable by people, but they are inconsistent enough that copying them straight into a shared catalogue log would create review debt.
+A community workshop or tool library receives supplier-style catalogues before shared item records exist. Some pages look like dense linecards, others look like product cards or family matrices. They are readable by people, but they are inconsistent enough that copying them straight into a shared catalogue log would create review debt.
 
 ## The Problem
 
@@ -29,13 +30,13 @@ This repo demonstrates a bounded review-first workflow. A coordinator can see wh
 
 Inputs:
 
-- Checked-in PDF fixtures in [examples/catalogues](examples/catalogues).
-- A fallback normalized JSON contract in [examples/input_contract/workshop-layout-a.json](examples/input_contract/workshop-layout-a.json).
+- Checked-in synthetic PDF fixtures in [examples/catalogues](examples/catalogues): a dense linecard, an equipment-card catalogue, and a family/variant matrix.
+- Fallback normalized JSON contracts in [examples/input_contract](examples/input_contract), one per public catalogue format.
 - Optional live OCR settings from [.env.example](.env.example) when a reviewer wants to process a PDF through Mistral OCR with their own API key.
 
 ## What Comes Out
 
-The main output is [examples/review_packet/index.html](examples/review_packet/index.html), a review packet for non-technical inspection. It is backed by:
+The main output is [examples/review_packets](examples/review_packets), with one review packet per public layout and one captured live OCR sample. Each packet is backed by:
 
 - `draft_items.json`: structured saved draft records with evidence.
 - `draft_items.csv`: spreadsheet-friendly draft review table.
@@ -46,17 +47,17 @@ The main output is [examples/review_packet/index.html](examples/review_packet/in
 
 The optional `mistral_ocr` path can send a PDF to Mistral OCR and receive page-level markdown for the same parser and validation pipeline. That live path is useful when a document-processing boundary needs to be exercised, but it is still only preprocessing. OCR output remains draft evidence, not an approval decision.
 
-The deterministic fallback contract keeps the repo reproducible without secrets. It proves the normalization contract, PHP validation, SQLite persistence, warning logic, and packet generation; it does not prove that authenticated OCR works.
+The contract packets are generated from deterministic fallback contracts so they remain reproducible without secrets. They prove the normalization contract, PHP validation, SQLite persistence, warning logic, and packet generation. The checked-in live OCR sample is generated from a synthetic public fixture with Mistral OCR; it proves the external OCR boundary can feed the same downstream workflow without publishing secrets or private data.
 
 ## Where Rules And Review Remain
 
-Python extracts text or OCR markdown and normalizes it into a JSON contract. PHP validates that contract, persists draft records, records warnings, and writes the review packet. Deterministic checks flag missing names, unknown categories, ambiguous sizes or specs, likely duplicates, malformed image references, low confidence, and extraction warnings.
+Python extracts text or OCR markdown and normalizes it into a JSON contract. PHP validates that contract, persists draft records, records warnings, and writes the review packet. Deterministic checks flag missing names, unknown categories, ambiguous sizes or specs, cross-page references, likely duplicates, missing or malformed image references, low confidence, and extraction warnings.
 
 Any `needs_human_review` row should be checked before an acceptance decision. A `ready_for_review` row only means the deterministic checks found no warning in that run; it is still a draft, not an approved item record. The source excerpt stays with each row so the reviewer can compare evidence to the saved draft.
 
 ## Scope Limits
 
-Fixtures are intentionally small, harmless, and synthetic. SQLite files created during review are local runtime state, not production data stores. The workflow does not include authentication, queues, deployment, non-public input feeds, image asset storage, role-based approval, live-provider cost controls, or large-scale accuracy tuning.
+Fixtures are intentionally harmless and synthetic, but they are shaped to resemble real catalogue problems: multi-page linecards, product-card grids, family matrices, shared images, continuation notes, footnotes, mixed units, and uncertain source quality. SQLite files created during review are local runtime state, not production data stores. The workflow does not include authentication, queues, deployment, non-public input feeds, image asset storage, role-based approval, live-provider cost controls, or large-scale accuracy tuning.
 
 ## Problem Class And Stack Fit
 
@@ -77,10 +78,10 @@ Technical pattern:
 One fixture row says:
 
 ```text
-1 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear
+LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page
 ```
 
-The importer keeps the visible name and category, preserves the mixed size text, and flags the row because the carton size ratio is unclear. PHP also flags the low confidence created by that uncertainty. The saved draft remains in SQLite and in the review packet with `review_status=needs_human_review`.
+The importer keeps the visible name and category, preserves the chart reference, and flags the row because part of the decision lives outside the row itself. PHP also preserves the warning and stores the draft in SQLite and in the review packet with `review_status=needs_human_review`.
 
 For a coordinator, the decision path is:
 
@@ -95,11 +96,11 @@ For a quick, non-destructive verification without installing Python PDF dependen
 ```bash
 OUT=/tmp/community-catalogue-review
 DB=/tmp/community-catalogue-review.sqlite
-php artisan catalogue:import-contract examples/input_contract/workshop-layout-a.json --output "$OUT" --database "$DB"
+php artisan catalogue:import-contract examples/input_contract/municipal-maintenance-linecard.json --output "$OUT" --database "$DB"
 printf 'Review packet: %s\n' "$OUT/index.html"
 ```
 
-Expected summary for the checked-in fallback contract: `Draft items: 6` and `Warnings: 15`. The checked-in PDF review packet was generated through the Mistral OCR path, and the fallback contract preserves that same normalized item set so the warning count should match the scratch `index.html` and `warnings.json` produced by the fallback path.
+Expected summary for the checked-in fallback contract: `Draft items: 12` and `Warnings: 24`. The matching checked-in packet is `examples/review_packets/municipal-maintenance-linecard/index.html`. The card and matrix contracts have their own checked-in packets under `examples/review_packets/`.
 
 That command uses the same PHP validation, SQLite persistence, warning logic, and review-packet generation as the PDF import. It does not test PDF text extraction or authenticated OCR; it tests the import contract after extraction without overwriting the checked-in review packet.
 
@@ -134,14 +135,21 @@ Run the primary PDF import path:
 ```bash
 OUT=/tmp/community-catalogue-pdf-review
 DB=/tmp/community-catalogue-pdf-review.sqlite
-php artisan catalogue:import examples/catalogues/workshop-layout-a.pdf \
+php artisan catalogue:import examples/catalogues/municipal-maintenance-linecard.pdf \
   --output "$OUT" \
   --database "$DB" \
   --python .venv/bin/python
 printf 'Review packet: %s\n' "$OUT/index.html"
 ```
 
-If that PDF command reports that `pypdf` is missing, use the fallback contract command below with both `--output` and `--database` set to scratch paths. Routine checks should not point fallback output at `examples/review_packet`.
+If that PDF command reports that `pypdf` is missing, use the fallback contract command below with both `--output` and `--database` set to scratch paths. Routine checks should not point fallback output at `examples/review_packets` unless you are intentionally refreshing tracked artifacts.
+
+The other public catalogue formats use the same command shape:
+
+```bash
+php artisan catalogue:import examples/catalogues/workshop-equipment-cards.pdf --output /tmp/community-catalogue-cards-review --database /tmp/community-catalogue-cards.sqlite --python .venv/bin/python
+php artisan catalogue:import examples/catalogues/storage-family-matrix.pdf --output /tmp/community-catalogue-matrix-review --database /tmp/community-catalogue-matrix.sqlite --python .venv/bin/python
+```
 
 Run the optional Mistral OCR path with your own key:
 
@@ -155,7 +163,7 @@ export MISTRAL_OCR_MODEL=mistral-ocr-latest
 export MISTRAL_OCR_TABLE_FORMAT=markdown
 export MISTRAL_OCR_CONFIDENCE=page
 
-php artisan catalogue:import examples/catalogues/workshop-layout-a.pdf \
+php artisan catalogue:import examples/catalogues/municipal-maintenance-linecard.pdf \
   --output "$OUT" \
   --database "$DB" \
   --python .venv/bin/python \
@@ -170,13 +178,39 @@ Run the fallback contract path:
 ```bash
 OUT=/tmp/community-catalogue-review
 DB=/tmp/community-catalogue-review.sqlite
-php artisan catalogue:import-contract examples/input_contract/workshop-layout-a.json \
+php artisan catalogue:import-contract examples/input_contract/municipal-maintenance-linecard.json \
   --output "$OUT" \
   --database "$DB"
 printf 'Review packet: %s\n' "$OUT/index.html"
 ```
 
-Those commands use scratch output paths so routine verification does not overwrite the checked-in packet. Refreshing the public packet is a maintenance action: rerun the chosen import with the checked-in packet folder and an explicit local runtime database path only when you intend to update tracked review artifacts.
+Those commands use scratch output paths so routine verification does not overwrite the checked-in packets. Refreshing public packets is a maintenance action: rerun the chosen imports with the checked-in packet folders and explicit local runtime database paths only when you intend to update tracked review artifacts.
+
+Fallback contracts are also available for the card and matrix fixtures:
+
+```bash
+php artisan catalogue:import-contract examples/input_contract/workshop-equipment-cards.json --output /tmp/community-catalogue-cards-review --database /tmp/community-catalogue-cards.sqlite
+php artisan catalogue:import-contract examples/input_contract/storage-family-matrix.json --output /tmp/community-catalogue-matrix-review --database /tmp/community-catalogue-matrix.sqlite
+```
+
+Checked-in per-layout packets are regenerated from the fallback contracts with the same command shape:
+
+```bash
+php artisan catalogue:import-contract examples/input_contract/municipal-maintenance-linecard.json --output examples/review_packets/municipal-maintenance-linecard --database /tmp/community-catalogue-packet-linecard.sqlite
+php artisan catalogue:import-contract examples/input_contract/workshop-equipment-cards.json --output examples/review_packets/workshop-equipment-cards --database /tmp/community-catalogue-packet-cards.sqlite
+php artisan catalogue:import-contract examples/input_contract/storage-family-matrix.json --output examples/review_packets/storage-family-matrix --database /tmp/community-catalogue-packet-matrix.sqlite
+```
+
+The checked-in live OCR sample is regenerated only when a reviewer has a valid Mistral secret and intends to refresh the published sample:
+
+```bash
+test -n "${MISTRAL_API_KEY:-}" || { printf 'Set MISTRAL_API_KEY first\n' >&2; exit 1; }
+php artisan catalogue:import examples/catalogues/municipal-maintenance-linecard.pdf \
+  --output examples/review_packets/live-mistral-ocr-linecard \
+  --database /tmp/community-catalogue-live-mistral-linecard.sqlite \
+  --python .venv/bin/python \
+  --extractor-provider mistral_ocr
+```
 
 ## Test
 
@@ -199,7 +233,7 @@ php tests/php/ImportContractTest.php
 - [docs/output-reading-guide.md](docs/output-reading-guide.md) explains how to read the HTML, JSON, CSV, warnings, and database.
 - [docs/live-and-fallback-paths.md](docs/live-and-fallback-paths.md) explains what the PDF path proves and what the JSON fallback proves.
 - [examples/catalogues/README.md](examples/catalogues/README.md) explains the fixture inputs.
-- [examples/review_packet/README.md](examples/review_packet/README.md) explains the generated review files.
+- [examples/review_packets/README.md](examples/review_packets/README.md) indexes the generated contract packets and the live OCR sample.
 
 ## Rights
 

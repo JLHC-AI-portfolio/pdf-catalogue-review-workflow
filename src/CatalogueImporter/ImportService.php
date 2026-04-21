@@ -24,7 +24,12 @@ final class ImportService
         $payload = (new PythonExtractor($this->rootPath))->extract($pdfPath, $pythonBinary, $provider);
         $payload['source_file'] = $this->relativeToRoot($pdfPath);
 
-        return $this->persistAndWrite($payload, 'pdf', $outputPath, $databasePath);
+        $providerName = $this->resolveProviderName($provider);
+
+        return $this->persistAndWrite($payload, 'pdf', $outputPath, $databasePath, [
+            'extraction_path' => $providerName === 'mistral_ocr' ? 'live_ocr' : 'local_pdf_text',
+            'extractor_provider' => $providerName,
+        ]);
     }
 
     /**
@@ -46,17 +51,22 @@ final class ImportService
             throw new \InvalidArgumentException("Contract file is not valid JSON: {$jsonPath}");
         }
 
-        return $this->persistAndWrite($payload, 'contract_json', $outputPath, $databasePath);
+        return $this->persistAndWrite($payload, 'contract_json', $outputPath, $databasePath, [
+            'extraction_path' => 'fallback_contract',
+            'extractor_provider' => 'not_used',
+        ]);
     }
 
     /**
      * @param array<string, mixed> $payload
+     * @param array<string, string> $runMetadata
      * @return array{run_id: int, source_file: string, layout_id: string, draft_item_count: int, warning_count: int, review_packet: string, database: string}
      */
-    private function persistAndWrite(array $payload, string $sourceKind, string $outputPath, string $databasePath): array
+    private function persistAndWrite(array $payload, string $sourceKind, string $outputPath, string $databasePath, array $runMetadata): array
     {
         $normalized = (new ContractValidator())->normalize($payload);
         $stored = (new Database($this->rootPath, $databasePath))->storeImport($normalized, $sourceKind);
+        $stored['run'] = $stored['run'] + $runMetadata;
         (new ReviewPacketWriter($this->rootPath))->write($stored, $outputPath);
 
         return [
@@ -74,5 +84,11 @@ final class ImportService
     {
         $prefix = rtrim($this->rootPath, '/') . '/';
         return str_starts_with($path, $prefix) ? substr($path, strlen($prefix)) : $path;
+    }
+
+    private function resolveProviderName(?string $provider): string
+    {
+        $candidate = trim((string) ($provider ?? getenv('CATALOGUE_EXTRACTOR_PROVIDER') ?: 'local_text'));
+        return $candidate === '' ? 'local_text' : strtolower($candidate);
     }
 }

@@ -1,0 +1,782 @@
+{
+    "run": {
+        "id": 1,
+        "source_file": "examples/catalogues/municipal-maintenance-linecard.pdf",
+        "source_kind": "pdf",
+        "layout_id": "municipal-maintenance-linecard",
+        "draft_item_count": 12,
+        "warning_count": 32,
+        "created_at": "2026-04-21T03:11:55+00:00",
+        "database": "/tmp/community-catalogue-live-mistral-linecard-metadata.sqlite",
+        "extraction_path": "live_ocr",
+        "extractor_provider": "mistral_ocr"
+    },
+    "items": [
+        {
+            "name": "Cut-resistant shop gloves",
+            "category": "safety",
+            "size_or_spec": "S/M/L mixed carton, 24 pair",
+            "image_ref": "images/cut-resistant-gloves.png",
+            "attributes": {
+                "material": "aramid knit",
+                "pack": "24 pair",
+                "note": "size ratio unclear",
+                "sku": "LC-101"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear",
+            "id": 1,
+            "row_number": 1,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 1,
+                    "draft_product_id": 1,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                },
+                {
+                    "id": 2,
+                    "draft_product_id": 1,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                },
+                {
+                    "id": 3,
+                    "draft_product_id": 1,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear"
+                }
+            ]
+        },
+        {
+            "name": "Floor marking tape starter set",
+            "category": "paint-labeling",
+            "size_or_spec": "6 rolls, 48 mm x about 25 m",
+            "image_ref": "floor-tape-set.png",
+            "attributes": {
+                "color": "yellow/black",
+                "adhesive": "low residue",
+                "note": "roll length estimated",
+                "sku": "LC-102"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated",
+            "id": 2,
+            "row_number": 2,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 4,
+                    "draft_product_id": 2,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "id": 5,
+                    "draft_product_id": 2,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "id": 6,
+                    "draft_product_id": 2,
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                },
+                {
+                    "id": 7,
+                    "draft_product_id": 2,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-102 | Floor marking tape starter set | paint labeling | 6 rolls, 48 mm x about 25 m | floor-tape-set.png | color=yellow/black; adhesive=low residue; note=roll length estimated"
+                }
+            ]
+        },
+        {
+            "name": "Deep parts tray with dividers",
+            "category": "storage",
+            "size_or_spec": "approx 14 in x 9 in, 12 dividers",
+            "image_ref": "images/deep-parts-tray.png",
+            "attributes": {
+                "material": "recycled plastic",
+                "note": "divider count handwritten",
+                "sku": "LC-103"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten",
+            "id": 3,
+            "row_number": 3,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 8,
+                    "draft_product_id": 3,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                },
+                {
+                    "id": 9,
+                    "draft_product_id": 3,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                },
+                {
+                    "id": 10,
+                    "draft_product_id": 3,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-103 | Deep parts tray with dividers | storage bins | approx 14 in x 9 in, 12 dividers | images/deep-parts-tray.png | material=recycled plastic; note=divider count handwritten"
+                }
+            ]
+        },
+        {
+            "name": "Bolt label refill cards",
+            "category": "paint-labeling",
+            "size_or_spec": "120 cards; see chart C-2 for adhesive",
+            "image_ref": "images/bolt-labels.png",
+            "attributes": {
+                "chart_ref": "C-2",
+                "note": "adhesive family continued on next page",
+                "sku": "LC-104"
+            },
+            "confidence": 0.7,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page",
+            "id": 4,
+            "row_number": 4,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 11,
+                    "draft_product_id": 4,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                },
+                {
+                    "id": 12,
+                    "draft_product_id": 4,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                },
+                {
+                    "id": 13,
+                    "draft_product_id": 4,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-104 | Bolt label refill cards | paint labeling | 120 cards; see chart C-2 for adhesive | images/bolt-labels.png | chart_ref=C-2; note=adhesive family continued on next page"
+                }
+            ]
+        },
+        {
+            "name": "Solvent-safe cleaning sprayer",
+            "category": "cleaning",
+            "size_or_spec": "capacity unknown, nominal 1 liter",
+            "image_ref": "images/cleaning-sprayer.png",
+            "attributes": {
+                "material": "HDPE",
+                "note": "capacity cell smudged",
+                "sku": "LC-105"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged",
+            "id": 5,
+            "row_number": 5,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 14,
+                    "draft_product_id": 5,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                },
+                {
+                    "id": 15,
+                    "draft_product_id": 5,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                },
+                {
+                    "id": 16,
+                    "draft_product_id": 5,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-105 | Solvent-safe cleaning sprayer | cleaning | capacity unknown, nominal 1 liter | images/cleaning-sprayer.png | material=HDPE; note=capacity cell smudged"
+                }
+            ]
+        },
+        {
+            "name": "Cut-resistant shop gloves",
+            "category": "safety",
+            "size_or_spec": "large carton, 24 pair",
+            "image_ref": "images/cut-resistant-gloves-large.png",
+            "attributes": {
+                "material": "aramid knit",
+                "pack": "24 pair",
+                "sku": "LC-106"
+            },
+            "confidence": 0.9,
+            "warnings": [
+                {
+                    "code": "POSSIBLE_DUPLICATE",
+                    "severity": "review",
+                    "message": "This draft looks like a duplicate of an earlier item in the same import run.",
+                    "source_field": "name",
+                    "source_excerpt": "LC-106 | Cut-resistant shop gloves | safety | large carton, 24 pair | images/cut-resistant-gloves-large.png | material=aramid knit; pack=24 pair"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-106 | Cut-resistant shop gloves | safety | large carton, 24 pair | images/cut-resistant-gloves-large.png | material=aramid knit; pack=24 pair",
+            "id": 6,
+            "row_number": 6,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 17,
+                    "draft_product_id": 6,
+                    "code": "POSSIBLE_DUPLICATE",
+                    "severity": "review",
+                    "message": "This draft looks like a duplicate of an earlier item in the same import run.",
+                    "source_field": "name",
+                    "source_excerpt": "LC-106 | Cut-resistant shop gloves | safety | large carton, 24 pair | images/cut-resistant-gloves-large.png | material=aramid knit; pack=24 pair"
+                }
+            ]
+        },
+        {
+            "name": "Torque driver micro set",
+            "category": "hand-tools",
+            "size_or_spec": "0.4-2.0 Nm; calibration due unknown",
+            "image_ref": "images/torque-driver-micro-set.png",
+            "attributes": {
+                "range": "0.4-2.0Nm",
+                "note": "calibration date cropped",
+                "sku": "LC-107"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped",
+            "id": 7,
+            "row_number": 7,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 18,
+                    "draft_product_id": 7,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                },
+                {
+                    "id": 19,
+                    "draft_product_id": 7,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                },
+                {
+                    "id": 20,
+                    "draft_product_id": 7,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-107 | Torque driver micro set | hand tools | 0.4-2.0 Nm; calibration due unknown | images/torque-driver-micro-set.png | range=0.4-2.0Nm; note=calibration date cropped"
+                }
+            ]
+        },
+        {
+            "name": "Mixed fastener service tray",
+            "category": "fasteners",
+            "size_or_spec": "assorted M3-M6; about 240 pieces",
+            "image_ref": "images/fasteners tray.png",
+            "attributes": {
+                "thread": "pitch unclear",
+                "note": "bin labels partially shadowed",
+                "sku": "LC-108"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed",
+            "id": 8,
+            "row_number": 8,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 21,
+                    "draft_product_id": 8,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "id": 22,
+                    "draft_product_id": 8,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "id": 23,
+                    "draft_product_id": 8,
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                },
+                {
+                    "id": 24,
+                    "draft_product_id": 8,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-108 | Mixed fastener service tray | fasteners | assorted M3-M6; about 240 pieces | images/fasteners tray.png | thread=pitch unclear; note=bin labels partially shadowed"
+                }
+            ]
+        },
+        {
+            "name": "Spill pad refill pack",
+            "category": "safety",
+            "size_or_spec": "100 pads, approx 15 in x 19 in",
+            "image_ref": "images/spill-pad-refill.png",
+            "attributes": {
+                "absorbency": "oil-only",
+                "note": "dimension rounded",
+                "sku": "LC-109"
+            },
+            "confidence": 0.68,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded",
+            "id": 9,
+            "row_number": 9,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 25,
+                    "draft_product_id": 9,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                },
+                {
+                    "id": 26,
+                    "draft_product_id": 9,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                },
+                {
+                    "id": 27,
+                    "draft_product_id": 9,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-109 | Spill pad refill pack | safety | 100 pads, approx 15 in x 19 in | images/spill-pad-refill.png | absorbency=oil-only; note=dimension rounded"
+                }
+            ]
+        },
+        {
+            "name": "Label printer starter kit",
+            "category": "paint-labeling",
+            "size_or_spec": "model W-12? includes 2 tapes",
+            "image_ref": "images/label-printer-kit.png",
+            "attributes": {
+                "power": "USB",
+                "note": "model suffix cropped",
+                "sku": "LC-110"
+            },
+            "confidence": 0.82,
+            "warnings": [
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-110 | Label printer starter kit | paint labeling | model W-12? includes 2 tapes | images/label-printer-kit.png | power=USB; note=model suffix cropped"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "LC-110 | Label printer starter kit | paint labeling | model W-12? includes 2 tapes | images/label-printer-kit.png | power=USB; note=model suffix cropped",
+            "id": 10,
+            "row_number": 10,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 28,
+                    "draft_product_id": 10,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "LC-110 | Label printer starter kit | paint labeling | model W-12? includes 2 tapes | images/label-printer-kit.png | power=USB; note=model suffix cropped"
+                }
+            ]
+        },
+        {
+            "name": "Broom head bundle",
+            "category": "cleaning",
+            "size_or_spec": "12 heads, mixed bristle colors",
+            "image_ref": "images/broom-head-bundle.png",
+            "attributes": {
+                "handle": "not included",
+                "note": "color mix varies",
+                "sku": "LC-111"
+            },
+            "confidence": 0.76,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-111 | Broom head bundle | cleaning | 12 heads, mixed bristle colors | images/broom-head-bundle.png | handle=not included; note=color mix varies"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "LC-111 | Broom head bundle | cleaning | 12 heads, mixed bristle colors | images/broom-head-bundle.png | handle=not included; note=color mix varies",
+            "id": 11,
+            "row_number": 11,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 29,
+                    "draft_product_id": 11,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-111 | Broom head bundle | cleaning | 12 heads, mixed bristle colors | images/broom-head-bundle.png | handle=not included; note=color mix varies"
+                }
+            ]
+        },
+        {
+            "name": "Clear bin tower kit",
+            "category": "storage",
+            "size_or_spec": "see matrix page E-2 for bin sizes",
+            "image_ref": "images/clear-bin-tower-kit.png",
+            "attributes": {
+                "variant_source": "matrix E-2",
+                "note": "dimensions split across matrix",
+                "sku": "LC-112"
+            },
+            "confidence": 0.7,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix",
+            "id": 12,
+            "row_number": 12,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 30,
+                    "draft_product_id": 12,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                },
+                {
+                    "id": 31,
+                    "draft_product_id": 12,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                },
+                {
+                    "id": 32,
+                    "draft_product_id": 12,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "LC-112 | Clear bin tower kit | storage | see matrix page E-2 for bin sizes | images/clear-bin-tower-kit.png | variant_source=matrix E-2; note=dimensions split across matrix"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "run_id": 1,
+    "warning_count": 12,
+    "warnings": [
+        {
+            "id": 1,
+            "draft_product_id": 1,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+        },
+        {
+            "id": 2,
+            "draft_product_id": 1,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+        },
+        {
+            "id": 3,
+            "draft_product_id": 1,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+        },
+        {
+            "id": 4,
+            "draft_product_id": 3,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "Product Card: EC-203; Title: Paint station masking kit; Category: paint labeling; Specs: kit includes 3 rolls, blade; Image asset: images/masking-kit.png; Attributes: code=EC-203; kit=masking; station=paint; Review cue: label tab count is handwritten in source"
+        },
+        {
+            "id": 5,
+            "draft_product_id": 4,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "Product Card: EC-204; Title: Rolling cleanup caddy; Category: cleaning; Specs: two-bin caddy; bottle rack;; Image asset: images/rolling-cleanup-caddy.png; Attributes: code=EC-204; bottle_rack=6; bin_count=2; Review cue: capacity is hidden by low contrast callout"
+        },
+        {
+            "id": 6,
+            "draft_product_id": 5,
+            "code": "AMBIGUOUS_SPEC",
+            "severity": "review",
+            "message": "The source text uses approximate or mixed sizing language.",
+            "source_field": "size_or_spec",
+            "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+        },
+        {
+            "id": 7,
+            "draft_product_id": 5,
+            "code": "MALFORMED_IMAGE_REF",
+            "severity": "review",
+            "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+            "source_field": "image_ref",
+            "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+        },
+        {
+            "id": 8,
+            "draft_product_id": 5,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+        },
+        {
+            "id": 9,
+            "draft_product_id": 8,
+            "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+            "severity": "review",
+            "message": "The source note says part of the row requires review.",
+            "source_field": "notes",
+            "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+        },
+        {
+            "id": 10,
+            "draft_product_id": 8,
+            "code": "CROSS_PAGE_REFERENCE",
+            "severity": "review",
+            "message": "The row depends on a chart, footnote, shared image, or another page.",
+            "source_field": "source_excerpt",
+            "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+        },
+        {
+            "id": 11,
+            "draft_product_id": 8,
+            "code": "MISSING_IMAGE_REF",
+            "severity": "review",
+            "message": "The source card did not provide a standalone image reference.",
+            "source_field": "image_ref",
+            "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+        },
+        {
+            "id": 12,
+            "draft_product_id": 8,
+            "code": "LOW_CONFIDENCE",
+            "severity": "review",
+            "message": "The extractor marked this item below the confidence threshold.",
+            "source_field": "confidence",
+            "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+        }
+    ]
+}

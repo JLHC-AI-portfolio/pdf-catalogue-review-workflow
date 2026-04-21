@@ -9,7 +9,7 @@ Command:
 ```bash
 OUT=/tmp/community-catalogue-pdf-review
 DB=/tmp/community-catalogue-pdf-review.sqlite
-php artisan catalogue:import examples/catalogues/workshop-layout-a.pdf \
+php artisan catalogue:import examples/catalogues/municipal-maintenance-linecard.pdf \
   --output "$OUT" \
   --database "$DB" \
   --python .venv/bin/python
@@ -25,7 +25,7 @@ What it proves:
 - PHP validates and persists the draft records,
 - the review packet is generated from saved data.
 
-The local text path is deterministic, but its warning count can differ from the checked-in Mistral OCR proof surface because OCR may split or preserve source text differently. In the current fixture set, the checked-in review packet is the Mistral-normalized proof surface; use the fallback contract when you want to reproduce that exact public output without a secret.
+The local text path is deterministic and exercises a dense linecard fixture with continuation notes, duplicate risk, malformed image references, and cross-page cues. Warning counts can differ on provider-backed OCR runs because OCR may split or preserve source text differently; use the fallback contract when you want to reproduce the checked-in public output without a secret.
 
 If this command fails because `pypdf` is not installed, use the contract fallback command below. For routine checks, keep both `--output` and `--database` on scratch paths such as `/tmp` so the checked-in packet and repo-local runtime state are not changed by accident.
 
@@ -64,7 +64,7 @@ export MISTRAL_OCR_ENDPOINT=https://api.mistral.ai/v1/ocr
 export MISTRAL_OCR_MODEL=mistral-ocr-latest
 export MISTRAL_OCR_TABLE_FORMAT=markdown
 export MISTRAL_OCR_CONFIDENCE=page
-php artisan catalogue:import examples/catalogues/workshop-layout-a.pdf \
+php artisan catalogue:import examples/catalogues/municipal-maintenance-linecard.pdf \
   --output "$OUT" \
   --database "$DB" \
   --python .venv/bin/python \
@@ -93,14 +93,14 @@ Non-destructive quick command:
 ```bash
 OUT=/tmp/community-catalogue-review
 DB=/tmp/community-catalogue-review.sqlite
-php artisan catalogue:import-contract examples/input_contract/workshop-layout-a.json \
+php artisan catalogue:import-contract examples/input_contract/municipal-maintenance-linecard.json \
   --output "$OUT" \
   --database "$DB"
 ```
 
-The current fallback contract should produce six draft items and fifteen warnings in that scratch packet. The fallback contract is generated from the same Mistral OCR-normalized item set as the checked-in PDF review packet, so the headline count should match the checked-in proof surface. If you intentionally want to refresh the checked-in review packet, replace the scratch output and database paths with the checked-in packet and local runtime database paths.
+The current primary fallback contract should produce twelve draft items and twenty-four warnings in that scratch packet. The fallback contract is generated from the same synthetic linecard item set as `examples/review_packets/municipal-maintenance-linecard/`, so the headline count should match the checked-in proof surface. If you intentionally want to refresh a checked-in packet, replace the scratch output and database paths with the selected packet folder and an explicit scratch database path.
 
-Do not use `examples/review_packet` as the fallback output path during normal verification. That folder is the checked-in review surface and should only be overwritten during an intentional artifact refresh.
+Do not use `examples/review_packets` subfolders as fallback output paths during normal verification. Those folders are the checked-in review surface and should only be overwritten during an intentional artifact refresh.
 
 What it proves:
 
@@ -116,6 +116,17 @@ What it does not prove:
 - dependency readiness for `pypdf`.
 
 Use this path for quick review or for machines where Python PDF dependencies are not installed.
+
+## Checked-In Packet Set
+
+The checked-in packet artifacts include reproducible contract-generated packets and one captured live OCR sample. The contract packets keep the public repo reviewable without asking a reviewer for a secret. The live sample demonstrates that the external OCR boundary can feed the same workflow when a reviewer supplies a Mistral key.
+
+- `examples/review_packets/municipal-maintenance-linecard/`: linecard packet, 12 draft items and 24 warnings.
+- `examples/review_packets/workshop-equipment-cards/`: product-card packet, 8 draft items and 12 warnings.
+- `examples/review_packets/storage-family-matrix/`: family-matrix packet, 9 draft items and 29 warnings.
+- `examples/review_packets/live-mistral-ocr-linecard/`: captured Mistral OCR sample from the same synthetic linecard PDF, 12 draft items and 32 warnings.
+
+Routine live Mistral runs should use `/tmp` output paths. Refreshing the checked-in live sample is a maintenance action and should be followed by a scan for secret markers before publication.
 
 ## External Providers
 

@@ -93,6 +93,8 @@ final class ReviewPacketWriter
         $warnings = $stored['warnings'];
         $example = $this->selectExample($items);
         $databasePath = $this->relativeToRoot((string) $run['database']);
+        $extractionPath = $this->labelExtractionPath((string) ($run['extraction_path'] ?? $run['source_kind']));
+        $extractorProvider = (string) ($run['extractor_provider'] ?? 'unknown');
 
         $rows = '';
         foreach ($items as $item) {
@@ -153,10 +155,12 @@ final class ReviewPacketWriter
 <body>
 <main>
   <h1>Workshop Catalogue Import Review Packet</h1>
-  <p>This packet shows what the importer drafted from a small catalogue sheet before any record is accepted into inventory. It is meant for a coordinator to review names, categories, specifications, images, warnings, and the saved draft evidence.</p>
+  <p>This packet shows what the importer drafted from a realistic synthetic supplier-style catalogue before any record is accepted into inventory. It is meant for a coordinator to review names, categories, specifications, image references, warnings, cross-page cues, and the saved draft evidence.</p>
 
   <section class="summary" aria-label="Import run summary">
     <div class="metric"><span>Source PDF</span><strong>' . $this->e(basename((string) $run['source_file'])) . '</strong></div>
+    <div class="metric"><span>Extraction path</span><strong>' . $this->e($extractionPath) . '</strong></div>
+    <div class="metric"><span>Extractor provider</span><strong>' . $this->e($extractorProvider) . '</strong></div>
     <div class="metric"><span>Detected layout</span><strong>' . $this->e((string) $run['layout_id']) . '</strong></div>
     <div class="metric"><span>Draft items</span><strong>' . $this->e((string) $run['draft_item_count']) . '</strong></div>
     <div class="metric"><span>Warnings</span><strong>' . $this->e((string) $run['warning_count']) . '</strong></div>
@@ -232,6 +236,16 @@ final class ReviewPacketWriter
     {
         $prefix = rtrim($this->rootPath, '/') . '/';
         return str_starts_with($path, $prefix) ? substr($path, strlen($prefix)) : $path;
+    }
+
+    private function labelExtractionPath(string $path): string
+    {
+        return match ($path) {
+            'fallback_contract', 'contract_json' => 'fallback contract',
+            'live_ocr' => 'live OCR',
+            'local_pdf_text', 'pdf' => 'local PDF text',
+            default => str_replace('_', ' ', $path),
+        };
     }
 
     private function e(string $value): string

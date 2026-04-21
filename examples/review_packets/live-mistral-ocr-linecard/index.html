@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop Catalogue Import Review Packet</title>
+  <style>
+    :root { color-scheme: light; --ink: #1e293b; --muted: #526070; --line: #d8dee8; --panel: #f6f8fb; --accent: #0f766e; --warn: #9a3412; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #ffffff; line-height: 1.5; }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: 0; }
+    h2 { margin-top: 32px; font-size: 21px; }
+    p { max-width: 860px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 22px 0; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: var(--panel); }
+    .metric strong { display: block; font-size: 24px; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #eef3f7; font-weight: 700; }
+    code { background: #eef3f7; padding: 2px 5px; border-radius: 4px; }
+    .status { display: inline-block; border-radius: 6px; padding: 2px 6px; font-size: 12px; font-weight: 700; }
+    .ready_for_review { color: #14532d; background: #dcfce7; }
+    .needs_human_review { color: var(--warn); background: #ffedd5; }
+    .callout { border-left: 4px solid var(--accent); background: #f0fdfa; padding: 14px 16px; margin: 18px 0; }
+    .warning-list { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; }
+    .warning-list li { margin: 7px 0; }
+    .links li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Workshop Catalogue Import Review Packet</h1>
+  <p>This packet shows what the importer drafted from a realistic synthetic supplier-style catalogue before any record is accepted into inventory. It is meant for a coordinator to review names, categories, specifications, image references, warnings, cross-page cues, and the saved draft evidence.</p>
+
+  <section class="summary" aria-label="Import run summary">
+    <div class="metric"><span>Source PDF</span><strong>municipal-maintenance-linecard.pdf</strong></div>
+    <div class="metric"><span>Extraction path</span><strong>live OCR</strong></div>
+    <div class="metric"><span>Extractor provider</span><strong>mistral_ocr</strong></div>
+    <div class="metric"><span>Detected layout</span><strong>municipal-maintenance-linecard</strong></div>
+    <div class="metric"><span>Draft items</span><strong>12</strong></div>
+    <div class="metric"><span>Warnings</span><strong>32</strong></div>
+  </section>
+
+  <section class="callout">
+    <h2>Evidence to Decision to Saved Draft</h2>
+    <p><strong>Source evidence:</strong> LC-101 | Cut-resistant shop gloves | safety | S/M/L mixed carton, 24 pair | images/cut-resistant-gloves.png | material=aramid knit; pack=24 pair; note=size ratio unclear</p>
+    <p><strong>Field decision:</strong> The importer kept the visible name and category, normalized the category to safety, and the draft was marked with AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE.</p>
+    <p><strong>Saved output:</strong> draft_products#1 was saved with review_status=needs_human_review and remains editable before approval.</p>
+  </section>
+
+  <section class="callout">
+    <h2>Coordinator Decision Cues</h2>
+    <p><strong>Accept for later approval:</strong> a <code>ready_for_review</code> row whose source excerpt matches the draft fields.</p>
+    <p><strong>Correct before approval:</strong> a row with ambiguous size, low confidence, unclear notes, or malformed image references.</p>
+    <p><strong>Merge or reject:</strong> a possible duplicate after comparing the source excerpt and intended inventory use.</p>
+  </section>
+
+  <h2>Draft Inventory Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Name</th><th>Category</th><th>Size or spec</th><th>Image ref</th><th>Confidence</th><th>Review cue</th><th>Warnings</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>1</td><td>Cut-resistant shop gloves</td><td>safety</td><td>S/M/L mixed carton, 24 pair</td><td>images/cut-resistant-gloves.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>2</td><td>Floor marking tape starter set</td><td>paint-labeling</td><td>6 rolls, 48 mm x about 25 m</td><td>floor-tape-set.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, MALFORMED_IMAGE_REF, LOW_CONFIDENCE</td></tr><tr><td>3</td><td>Deep parts tray with dividers</td><td>storage</td><td>approx 14 in x 9 in, 12 dividers</td><td>images/deep-parts-tray.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>4</td><td>Bolt label refill cards</td><td>paint-labeling</td><td>120 cards; see chart C-2 for adhesive</td><td>images/bolt-labels.png</td><td>0.70</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, CROSS_PAGE_REFERENCE, LOW_CONFIDENCE</td></tr><tr><td>5</td><td>Solvent-safe cleaning sprayer</td><td>cleaning</td><td>capacity unknown, nominal 1 liter</td><td>images/cleaning-sprayer.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>6</td><td>Cut-resistant shop gloves</td><td>safety</td><td>large carton, 24 pair</td><td>images/cut-resistant-gloves-large.png</td><td>0.90</td><td><span class="status needs_human_review">needs_human_review</span></td><td>POSSIBLE_DUPLICATE</td></tr><tr><td>7</td><td>Torque driver micro set</td><td>hand-tools</td><td>0.4-2.0 Nm; calibration due unknown</td><td>images/torque-driver-micro-set.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>8</td><td>Mixed fastener service tray</td><td>fasteners</td><td>assorted M3-M6; about 240 pieces</td><td>images/fasteners tray.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, MALFORMED_IMAGE_REF, LOW_CONFIDENCE</td></tr><tr><td>9</td><td>Spill pad refill pack</td><td>safety</td><td>100 pads, approx 15 in x 19 in</td><td>images/spill-pad-refill.png</td><td>0.68</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>10</td><td>Label printer starter kit</td><td>paint-labeling</td><td>model W-12? includes 2 tapes</td><td>images/label-printer-kit.png</td><td>0.82</td><td><span class="status needs_human_review">needs_human_review</span></td><td>SOURCE_NOTE_REQUIRES_REVIEW</td></tr><tr><td>11</td><td>Broom head bundle</td><td>cleaning</td><td>12 heads, mixed bristle colors</td><td>images/broom-head-bundle.png</td><td>0.76</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC</td></tr><tr><td>12</td><td>Clear bin tower kit</td><td>storage</td><td>see matrix page E-2 for bin sizes</td><td>images/clear-bin-tower-kit.png</td><td>0.70</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, CROSS_PAGE_REFERENCE, LOW_CONFIDENCE</td></tr></tbody>
+  </table>
+
+  <h2>Warnings for Human Review</h2>
+  <ul class="warning-list"><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>MALFORMED_IMAGE_REF</strong>: The image reference should look like images/example-name.png or images/example-name.jpg. <span>(image_ref)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>CROSS_PAGE_REFERENCE</strong>: The row depends on a chart, footnote, shared image, or another page. <span>(source_excerpt)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>POSSIBLE_DUPLICATE</strong>: This draft looks like a duplicate of an earlier item in the same import run. <span>(name)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>MALFORMED_IMAGE_REF</strong>: The image reference should look like images/example-name.png or images/example-name.jpg. <span>(image_ref)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>CROSS_PAGE_REFERENCE</strong>: The row depends on a chart, footnote, shared image, or another page. <span>(source_excerpt)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li></ul>
+
+  <h2>Supporting Files</h2>
+  <ul class="links">
+    <li><a href="draft_items.json">draft_items.json</a> contains the structured saved draft records and technical evidence.</li>
+    <li><a href="draft_items.csv">draft_items.csv</a> is a spreadsheet-friendly view for quick review.</li>
+    <li><a href="warnings.json">warnings.json</a> lists all validation and extraction warnings.</li>
+    <li><code>/tmp/community-catalogue-live-mistral-linecard-metadata.sqlite</code> is the local SQLite database created by the command when the workflow is run.</li>
+  </ul>
+
+  <p class="muted">A human reviewer should resolve warnings before approving any draft record for an inventory system.</p>
+</main>
+</body>
+</html>

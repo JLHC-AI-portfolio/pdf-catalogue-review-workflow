@@ -36,7 +36,7 @@ def extract_pdf_text_local(pdf_path: Path) -> str:
             "PDF extraction requires pypdf. Install with `python -m pip install -r requirements.txt`, "
             "or run the fallback with scratch paths: "
             "`OUT=/tmp/community-catalogue-review DB=/tmp/community-catalogue-review.sqlite "
-            "php artisan catalogue:import-contract examples/input_contract/workshop-layout-a.json "
+            "php artisan catalogue:import-contract examples/input_contract/municipal-maintenance-linecard.json "
             '--output "$OUT" --database "$DB"`.'
         ) from exc
 

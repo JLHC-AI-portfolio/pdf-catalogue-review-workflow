@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop Catalogue Import Review Packet</title>
+  <style>
+    :root { color-scheme: light; --ink: #1e293b; --muted: #526070; --line: #d8dee8; --panel: #f6f8fb; --accent: #0f766e; --warn: #9a3412; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #ffffff; line-height: 1.5; }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: 0; }
+    h2 { margin-top: 32px; font-size: 21px; }
+    p { max-width: 860px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 22px 0; }
+    .metric { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: var(--panel); }
+    .metric strong { display: block; font-size: 24px; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #eef3f7; font-weight: 700; }
+    code { background: #eef3f7; padding: 2px 5px; border-radius: 4px; }
+    .status { display: inline-block; border-radius: 6px; padding: 2px 6px; font-size: 12px; font-weight: 700; }
+    .ready_for_review { color: #14532d; background: #dcfce7; }
+    .needs_human_review { color: var(--warn); background: #ffedd5; }
+    .callout { border-left: 4px solid var(--accent); background: #f0fdfa; padding: 14px 16px; margin: 18px 0; }
+    .warning-list { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; }
+    .warning-list li { margin: 7px 0; }
+    .links li { margin: 6px 0; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Workshop Catalogue Import Review Packet</h1>
+  <p>This packet shows what the importer drafted from a realistic synthetic supplier-style catalogue before any record is accepted into inventory. It is meant for a coordinator to review names, categories, specifications, image references, warnings, cross-page cues, and the saved draft evidence.</p>
+
+  <section class="summary" aria-label="Import run summary">
+    <div class="metric"><span>Source PDF</span><strong>workshop-equipment-cards.pdf</strong></div>
+    <div class="metric"><span>Extraction path</span><strong>fallback contract</strong></div>
+    <div class="metric"><span>Extractor provider</span><strong>not_used</strong></div>
+    <div class="metric"><span>Detected layout</span><strong>workshop-equipment-cards</strong></div>
+    <div class="metric"><span>Draft items</span><strong>8</strong></div>
+    <div class="metric"><span>Warnings</span><strong>12</strong></div>
+  </section>
+
+  <section class="callout">
+    <h2>Evidence to Decision to Saved Draft</h2>
+    <p><strong>Source evidence:</strong> Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear</p>
+    <p><strong>Field decision:</strong> The importer kept the visible name and category, normalized the category to hand-tools, and the draft was marked with AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE.</p>
+    <p><strong>Saved output:</strong> draft_products#1 was saved with review_status=needs_human_review and remains editable before approval.</p>
+  </section>
+
+  <section class="callout">
+    <h2>Coordinator Decision Cues</h2>
+    <p><strong>Accept for later approval:</strong> a <code>ready_for_review</code> row whose source excerpt matches the draft fields.</p>
+    <p><strong>Correct before approval:</strong> a row with ambiguous size, low confidence, unclear notes, or malformed image references.</p>
+    <p><strong>Merge or reject:</strong> a possible duplicate after comparing the source excerpt and intended inventory use.</p>
+  </section>
+
+  <h2>Draft Inventory Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Name</th><th>Category</th><th>Size or spec</th><th>Image ref</th><th>Confidence</th><th>Review cue</th><th>Warnings</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>1</td><td>Mobile clamp cart</td><td>hand-tools</td><td>38 in high; capacity about 90</td><td>images/mobile-clamp-cart.png</td><td>0.66</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, SOURCE_NOTE_REQUIRES_REVIEW, LOW_CONFIDENCE</td></tr><tr><td>2</td><td>Bench safety shield</td><td>safety</td><td>24 in polycarbonate panel;</td><td>images/bench-safety-shield.png</td><td>0.88</td><td><span class="status ready_for_review">ready_for_review</span></td><td>none</td></tr><tr><td>3</td><td>Paint station masking kit</td><td>paint-labeling</td><td>kit includes 3 rolls, blade</td><td>images/masking-kit.png</td><td>0.80</td><td><span class="status needs_human_review">needs_human_review</span></td><td>SOURCE_NOTE_REQUIRES_REVIEW</td></tr><tr><td>4</td><td>Rolling cleanup caddy</td><td>cleaning</td><td>two-bin caddy; bottle rack;</td><td>images/rolling-cleanup-caddy.png</td><td>0.80</td><td><span class="status needs_human_review">needs_human_review</span></td><td>SOURCE_NOTE_REQUIRES_REVIEW</td></tr><tr><td>5</td><td>Wall rail hook assortment</td><td>storage</td><td>assorted hook sizes; pack</td><td>wall-rail-hooks.png</td><td>0.74</td><td><span class="status needs_human_review">needs_human_review</span></td><td>AMBIGUOUS_SPEC, MALFORMED_IMAGE_REF, LOW_CONFIDENCE</td></tr><tr><td>6</td><td>Thread gauge pocket card</td><td>fasteners</td><td>metric and UNC reference;</td><td>images/thread-gauge-card.png</td><td>0.88</td><td><span class="status ready_for_review">ready_for_review</span></td><td>none</td></tr><tr><td>7</td><td>Low-profile parts scale</td><td>other</td><td>0-5 kg range; calibration</td><td>images/parts-scale.png</td><td>0.88</td><td><span class="status ready_for_review">ready_for_review</span></td><td>none</td></tr><tr><td>8</td><td>Magnetic bit rail</td><td>hand-tools</td><td>12 slots; works with 1/4 in</td><td></td><td>0.67</td><td><span class="status needs_human_review">needs_human_review</span></td><td>SOURCE_NOTE_REQUIRES_REVIEW, CROSS_PAGE_REFERENCE, MISSING_IMAGE_REF, LOW_CONFIDENCE</td></tr></tbody>
+  </table>
+
+  <h2>Warnings for Human Review</h2>
+  <ul class="warning-list"><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>AMBIGUOUS_SPEC</strong>: The source text uses approximate or mixed sizing language. <span>(size_or_spec)</span></li><li><strong>MALFORMED_IMAGE_REF</strong>: The image reference should look like images/example-name.png or images/example-name.jpg. <span>(image_ref)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li><li><strong>SOURCE_NOTE_REQUIRES_REVIEW</strong>: The source note says part of the row requires review. <span>(notes)</span></li><li><strong>CROSS_PAGE_REFERENCE</strong>: The row depends on a chart, footnote, shared image, or another page. <span>(source_excerpt)</span></li><li><strong>MISSING_IMAGE_REF</strong>: The source card did not provide a standalone image reference. <span>(image_ref)</span></li><li><strong>LOW_CONFIDENCE</strong>: The extractor marked this item below the confidence threshold. <span>(confidence)</span></li></ul>
+
+  <h2>Supporting Files</h2>
+  <ul class="links">
+    <li><a href="draft_items.json">draft_items.json</a> contains the structured saved draft records and technical evidence.</li>
+    <li><a href="draft_items.csv">draft_items.csv</a> is a spreadsheet-friendly view for quick review.</li>
+    <li><a href="warnings.json">warnings.json</a> lists all validation and extraction warnings.</li>
+    <li><code>/tmp/community-catalogue-packet-cards-metadata.sqlite</code> is the local SQLite database created by the command when the workflow is run.</li>
+  </ul>
+
+  <p class="muted">A human reviewer should resolve warnings before approving any draft record for an inventory system.</p>
+</main>
+</body>
+</html>

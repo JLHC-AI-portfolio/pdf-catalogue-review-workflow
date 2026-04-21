@@ -1,0 +1,374 @@
+{
+    "run": {
+        "id": 1,
+        "source_file": "examples/catalogues/workshop-equipment-cards.pdf",
+        "source_kind": "contract_json",
+        "layout_id": "workshop-equipment-cards",
+        "draft_item_count": 8,
+        "warning_count": 12,
+        "created_at": "2026-04-21T03:11:48+00:00",
+        "database": "/tmp/community-catalogue-packet-cards-metadata.sqlite",
+        "extraction_path": "fallback_contract",
+        "extractor_provider": "not_used"
+    },
+    "items": [
+        {
+            "name": "Mobile clamp cart",
+            "category": "hand-tools",
+            "size_or_spec": "38 in high; capacity about 90",
+            "image_ref": "images/mobile-clamp-cart.png",
+            "attributes": {
+                "note": "capacity is approximate; clamp mix unclear",
+                "code": "EC-201",
+                "surface": "powder coated steel"
+            },
+            "confidence": 0.66,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                },
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear",
+            "id": 1,
+            "row_number": 1,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 1,
+                    "draft_product_id": 1,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                },
+                {
+                    "id": 2,
+                    "draft_product_id": 1,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                },
+                {
+                    "id": 3,
+                    "draft_product_id": 1,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-201; Title: Mobile clamp cart; Category: hand tools; Specs: 38 in high; capacity about 90; Image asset: images/mobile-clamp-cart.png; Attributes: code=EC-201; surface=powder coated steel;; Review cue: capacity is approximate; clamp mix unclear"
+                }
+            ]
+        },
+        {
+            "name": "Bench safety shield",
+            "category": "safety",
+            "size_or_spec": "24 in polycarbonate panel;",
+            "image_ref": "images/bench-safety-shield.png",
+            "attributes": {
+                "note": "slot compatibility depends on bench model",
+                "code": "EC-202",
+                "material": "polycarbonate"
+            },
+            "confidence": 0.88,
+            "warnings": [],
+            "source_page": 1,
+            "source_excerpt": "Product Card: EC-202; Title: Bench safety shield; Category: safety; Specs: 24 in polycarbonate panel;; Image asset: images/bench-safety-shield.png; Attributes: code=EC-202; material=polycarbonate;; Review cue: slot compatibility depends on bench model",
+            "id": 2,
+            "row_number": 2,
+            "review_status": "ready_for_review",
+            "stored_warnings": []
+        },
+        {
+            "name": "Paint station masking kit",
+            "category": "paint-labeling",
+            "size_or_spec": "kit includes 3 rolls, blade",
+            "image_ref": "images/masking-kit.png",
+            "attributes": {
+                "note": "label tab count is handwritten in source",
+                "code": "EC-203",
+                "kit": "masking",
+                "station": "paint"
+            },
+            "confidence": 0.8,
+            "warnings": [
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-203; Title: Paint station masking kit; Category: paint labeling; Specs: kit includes 3 rolls, blade; Image asset: images/masking-kit.png; Attributes: code=EC-203; kit=masking; station=paint; Review cue: label tab count is handwritten in source"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Product Card: EC-203; Title: Paint station masking kit; Category: paint labeling; Specs: kit includes 3 rolls, blade; Image asset: images/masking-kit.png; Attributes: code=EC-203; kit=masking; station=paint; Review cue: label tab count is handwritten in source",
+            "id": 3,
+            "row_number": 3,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 4,
+                    "draft_product_id": 3,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-203; Title: Paint station masking kit; Category: paint labeling; Specs: kit includes 3 rolls, blade; Image asset: images/masking-kit.png; Attributes: code=EC-203; kit=masking; station=paint; Review cue: label tab count is handwritten in source"
+                }
+            ]
+        },
+        {
+            "name": "Rolling cleanup caddy",
+            "category": "cleaning",
+            "size_or_spec": "two-bin caddy; bottle rack;",
+            "image_ref": "images/rolling-cleanup-caddy.png",
+            "attributes": {
+                "note": "capacity is hidden by low contrast callout",
+                "code": "EC-204",
+                "bottle_rack": "6",
+                "bin_count": "2"
+            },
+            "confidence": 0.8,
+            "warnings": [
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-204; Title: Rolling cleanup caddy; Category: cleaning; Specs: two-bin caddy; bottle rack;; Image asset: images/rolling-cleanup-caddy.png; Attributes: code=EC-204; bottle_rack=6; bin_count=2; Review cue: capacity is hidden by low contrast callout"
+                }
+            ],
+            "source_page": 1,
+            "source_excerpt": "Product Card: EC-204; Title: Rolling cleanup caddy; Category: cleaning; Specs: two-bin caddy; bottle rack;; Image asset: images/rolling-cleanup-caddy.png; Attributes: code=EC-204; bottle_rack=6; bin_count=2; Review cue: capacity is hidden by low contrast callout",
+            "id": 4,
+            "row_number": 4,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 5,
+                    "draft_product_id": 4,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-204; Title: Rolling cleanup caddy; Category: cleaning; Specs: two-bin caddy; bottle rack;; Image asset: images/rolling-cleanup-caddy.png; Attributes: code=EC-204; bottle_rack=6; bin_count=2; Review cue: capacity is hidden by low contrast callout"
+                }
+            ]
+        },
+        {
+            "name": "Wall rail hook assortment",
+            "category": "storage",
+            "size_or_spec": "assorted hook sizes; pack",
+            "image_ref": "wall-rail-hooks.png",
+            "attributes": {
+                "note": "image reference lacks folder prefix",
+                "code": "EC-205",
+                "mount": "wall rail",
+                "finish": "zinc"
+            },
+            "confidence": 0.74,
+            "warnings": [
+                {
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                },
+                {
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix",
+            "id": 5,
+            "row_number": 5,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 6,
+                    "draft_product_id": 5,
+                    "code": "AMBIGUOUS_SPEC",
+                    "severity": "review",
+                    "message": "The source text uses approximate or mixed sizing language.",
+                    "source_field": "size_or_spec",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                },
+                {
+                    "id": 7,
+                    "draft_product_id": 5,
+                    "code": "MALFORMED_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The image reference should look like images/example-name.png or images/example-name.jpg.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                },
+                {
+                    "id": 8,
+                    "draft_product_id": 5,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-205; Title: Wall rail hook assortment; Category: storage; Specs: assorted hook sizes; pack; Image asset: wall-rail-hooks.png; Attributes: code=EC-205; mount=wall rail; finish=zinc; Review cue: image reference lacks folder prefix"
+                }
+            ]
+        },
+        {
+            "name": "Thread gauge pocket card",
+            "category": "fasteners",
+            "size_or_spec": "metric and UNC reference;",
+            "image_ref": "images/thread-gauge-card.png",
+            "attributes": {
+                "note": "small print must be checked before import",
+                "code": "EC-206",
+                "format": "laminated card"
+            },
+            "confidence": 0.88,
+            "warnings": [],
+            "source_page": 2,
+            "source_excerpt": "Product Card: EC-206; Title: Thread gauge pocket card; Category: fasteners; Specs: metric and UNC reference;; Image asset: images/thread-gauge-card.png; Attributes: code=EC-206; format=laminated card; Review cue: small print must be checked before import",
+            "id": 6,
+            "row_number": 6,
+            "review_status": "ready_for_review",
+            "stored_warnings": []
+        },
+        {
+            "name": "Low-profile parts scale",
+            "category": "other",
+            "size_or_spec": "0-5 kg range; calibration",
+            "image_ref": "images/parts-scale.png",
+            "attributes": {
+                "note": "calibration date unknown",
+                "code": "EC-207",
+                "power": "USB-C",
+                "tray": "stainless"
+            },
+            "confidence": 0.88,
+            "warnings": [],
+            "source_page": 2,
+            "source_excerpt": "Product Card: EC-207; Title: Low-profile parts scale; Category: other; Specs: 0-5 kg range; calibration; Image asset: images/parts-scale.png; Attributes: code=EC-207; power=USB-C; tray=stainless; Review cue: calibration date unknown",
+            "id": 7,
+            "row_number": 7,
+            "review_status": "ready_for_review",
+            "stored_warnings": []
+        },
+        {
+            "name": "Magnetic bit rail",
+            "category": "hand-tools",
+            "size_or_spec": "12 slots; works with 1/4 in",
+            "image_ref": "",
+            "attributes": {
+                "note": "missing image in source card; shared photo",
+                "code": "EC-208",
+                "material": "aluminum"
+            },
+            "confidence": 0.67,
+            "warnings": [
+                {
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "code": "MISSING_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The source card did not provide a standalone image reference.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                }
+            ],
+            "source_page": 2,
+            "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo",
+            "id": 8,
+            "row_number": 8,
+            "review_status": "needs_human_review",
+            "stored_warnings": [
+                {
+                    "id": 9,
+                    "draft_product_id": 8,
+                    "code": "SOURCE_NOTE_REQUIRES_REVIEW",
+                    "severity": "review",
+                    "message": "The source note says part of the row requires review.",
+                    "source_field": "notes",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "id": 10,
+                    "draft_product_id": 8,
+                    "code": "CROSS_PAGE_REFERENCE",
+                    "severity": "review",
+                    "message": "The row depends on a chart, footnote, shared image, or another page.",
+                    "source_field": "source_excerpt",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "id": 11,
+                    "draft_product_id": 8,
+                    "code": "MISSING_IMAGE_REF",
+                    "severity": "review",
+                    "message": "The source card did not provide a standalone image reference.",
+                    "source_field": "image_ref",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                },
+                {
+                    "id": 12,
+                    "draft_product_id": 8,
+                    "code": "LOW_CONFIDENCE",
+                    "severity": "review",
+                    "message": "The extractor marked this item below the confidence threshold.",
+                    "source_field": "confidence",
+                    "source_excerpt": "Product Card: EC-208; Title: Magnetic bit rail; Category: hand tools; Specs: 12 slots; works with 1/4 in; Image asset:; Attributes: code=EC-208; material=aluminum;; Review cue: missing image in source card; shared photo"
+                }
+            ]
+        }
+    ]
+}

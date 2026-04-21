@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from catalogue_extractor.parser import parse_catalogue_text
+from catalogue_extractor.pdf_text import extract_pdf_text
 
 
 LAYOUT_A_TEXT = """--- PAGE 1 ---
@@ -27,7 +30,7 @@ Review note: thread pitch unclear
 
 
 def test_layout_a_parser_flags_ambiguous_spec_and_keeps_evidence():
-    payload = parse_catalogue_text(LAYOUT_A_TEXT, source_file="examples/catalogues/workshop-layout-a.pdf")
+    payload = parse_catalogue_text(LAYOUT_A_TEXT, source_file="unit-fixtures/layout-a.txt")
 
     assert payload["layout_id"] == "workshop-layout-a"
     assert len(payload["items"]) == 2
@@ -38,7 +41,7 @@ def test_layout_a_parser_flags_ambiguous_spec_and_keeps_evidence():
 
 
 def test_layout_b_parser_supports_block_layout():
-    payload = parse_catalogue_text(LAYOUT_B_TEXT, source_file="examples/catalogues/workshop-layout-b.pdf")
+    payload = parse_catalogue_text(LAYOUT_B_TEXT, source_file="unit-fixtures/layout-b.txt")
 
     assert payload["layout_id"] == "workshop-layout-b"
     assert payload["items"][0]["name"] == "Stackable parts bin"
@@ -48,3 +51,37 @@ def test_layout_b_parser_supports_block_layout():
     assert payload["items"][1]["category"] == "fasteners"
     warning_codes = {warning["code"] for warning in payload["items"][1]["warnings"]}
     assert "SOURCE_NOTE_REQUIRES_REVIEW" in warning_codes
+
+
+def test_complex_public_pdf_fixtures_parse_with_distinct_layouts():
+    repo_root = Path(__file__).resolve().parents[2]
+    expected = {
+        "municipal-maintenance-linecard.pdf": ("municipal-maintenance-linecard", 12, 12),
+        "workshop-equipment-cards.pdf": ("workshop-equipment-cards", 8, 6),
+        "storage-family-matrix.pdf": ("storage-family-matrix", 9, 10),
+    }
+
+    for filename, (layout_id, item_count, min_warning_count) in expected.items():
+        pdf_path = repo_root / "examples" / "catalogues" / filename
+        text = extract_pdf_text(pdf_path)
+        payload = parse_catalogue_text(text, source_file=str(pdf_path))
+        warning_count = sum(len(item["warnings"]) for item in payload["items"])
+
+        assert payload["layout_id"] == layout_id
+        assert len(payload["items"]) == item_count
+        assert warning_count >= min_warning_count
+
+
+def test_family_matrix_inherits_shared_image_and_flags_cross_references():
+    repo_root = Path(__file__).resolve().parents[2]
+    pdf_path = repo_root / "examples" / "catalogues" / "storage-family-matrix.pdf"
+    payload = parse_catalogue_text(extract_pdf_text(pdf_path), source_file=str(pdf_path))
+
+    names = {item["name"] for item in payload["items"]}
+    assert "Clear bin tower - 12 bin" in names
+    assert "Station label replacement set" in names
+
+    matrix_item = next(item for item in payload["items"] if item["name"] == "Clear bin tower - 12 bin")
+    assert matrix_item["image_ref"] == "images/clear-bin-tower-family.png"
+    warning_codes = {warning["code"] for warning in matrix_item["warnings"]}
+    assert "CROSS_PAGE_REFERENCE" in warning_codes

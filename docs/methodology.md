@@ -4,12 +4,12 @@ This document explains why the importer is designed as a review-first workflow i
 
 ## Assumptions
 
-The public fixtures model small catalogue PDFs used by a community workshop. They are text-readable, but they include operationally realistic friction such as repeated headers, page breaks, mixed size language, handwritten-note cues, scan-shadow notes, malformed image references, and likely duplicates. That keeps the reference runnable without OCR while still exercising review behavior beyond a perfect table.
+The public fixtures model synthetic supplier-style catalogue PDFs used by a community workshop. They are text-readable so the default path stays reproducible, but they include operationally realistic friction: dense linecards, product-card grids, family matrices, repeated headers, page breaks, shared images, cross-page references, mixed size language, source-quality cues, malformed image references, and likely duplicates. That keeps the reference runnable without OCR while still exercising review behavior beyond a perfect table.
 
 The workflow assumes:
 
-- each sheet contains a small number of item rows,
-- layouts may vary between table-style, block-style, and mildly inconsistent label variants,
+- each catalogue contains a bounded but non-trivial set of item candidates,
+- layouts may vary between linecard tables, card grids, and family/variant matrices,
 - source text can include approximate terms or source-quality notes,
 - image references may be present but not always well formed,
 - draft records are useful only when paired with source evidence and warnings.
@@ -26,14 +26,15 @@ Preprocessing normalizes whitespace but does not rewrite the source excerpt. The
 
 The parser uses deterministic layout detection because the public fixtures are constrained:
 
-- Layout A is detected by a table header containing `Item | Name | Category`.
-- Layout B is detected by repeated `Record:` or `Item Card:` blocks.
+- `municipal-maintenance-linecard` is detected by a `SKU | Item | Family` linecard header.
+- `workshop-equipment-cards` is detected by repeated `Product Card:` blocks.
+- `storage-family-matrix` is detected by `Family Matrix:` sections with inherited category and image fields.
 
-This is intentionally conservative. Known label variants inside Layout B are normalized, but unknown layouts return an empty item list plus a blocking warning instead of guessing.
+This is intentionally conservative. Known label variants inside card layouts are normalized, matrix rows inherit explicit family-level context, and unknown layouts return an empty item list plus a blocking warning instead of guessing.
 
 ## Row Grouping And Field Normalization
 
-Layout A is parsed by splitting table rows on `|`. Layout B is parsed by collecting key-value blocks. Both layouts emit the same JSON contract:
+Linecards are parsed by grouping wrapped pipe-delimited rows. Product cards are parsed by collecting repeated key-value blocks. Family matrices are parsed by collecting variant rows that inherit category and shared image references from the surrounding family section. All layouts emit the same JSON contract:
 
 - `source_file`
 - `layout_id`
@@ -54,7 +55,7 @@ Categories are normalized into a small public item list: `safety`, `hand-tools`,
 
 Confidence is a review signal, not an approval score. The Python extractor lowers confidence when source notes or specifications indicate uncertainty. PHP then applies deterministic validation before persistence.
 
-Python warning rules catch approximate size language and source notes that mention unclear, handwritten, shadowed, smudged, cropped, or estimated fields. PHP warning rules then catch:
+Python warning rules catch approximate size language, source notes that mention unclear, handwritten, shadowed, smudged, cropped, or estimated fields, cross-page references, and missing image references. PHP warning rules then catch:
 
 - missing names,
 - unknown categories,

@@ -7,14 +7,18 @@ This guide explains what each generated output means and what a reviewer should 
 Open:
 
 ```text
-examples/review_packet/index.html
+examples/review_packets/municipal-maintenance-linecard/index.html
 ```
+
+That file is the fastest first read. The complete multi-format set lives in `examples/review_packets/`, with contract-generated packet directories for each public layout and one captured live OCR sample.
 
 If you are reading on GitHub, clone the repo or run the 60-second review command from the README before opening the packet; GitHub shows the checked-in HTML as source markup instead of rendering the review view.
 
 The top summary answers four questions:
 
 - Which source PDF was imported?
+- Which extraction path produced the packet?
+- Which extractor provider was used, if any?
 - Which layout was detected?
 - How many draft records were created?
 - How many warnings need review?
@@ -24,7 +28,7 @@ The table is the review queue. A row marked `ready_for_review` only means no aut
 Use the status as a decision cue, not as the decision itself:
 
 - Accept for later approval when the row is `ready_for_review` and the source excerpt matches the saved fields.
-- Correct before approval when a row has ambiguous size, low confidence, unclear notes, or a malformed image reference.
+- Correct before approval when a row has ambiguous size, low confidence, unclear notes, a cross-page reference, or a missing/malformed image reference.
 - Merge or reject when a row is flagged as a possible duplicate and the source evidence shows it is not a useful separate variant.
 
 ## Read The Evidence Example
@@ -83,3 +87,4 @@ The database is runtime state, so it is not checked in. The migration SQL is che
 - For each warning, compare `source_excerpt` to the saved field.
 - Confirm duplicate warnings are plausible before merging or rejecting rows.
 - Treat low-confidence and ambiguous-size rows as unresolved until a person chooses the final value.
+- Open referenced charts, footnotes, or family sections before accepting rows with `CROSS_PAGE_REFERENCE`.

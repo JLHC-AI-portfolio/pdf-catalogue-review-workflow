@@ -10,19 +10,19 @@ This document explains how the importer is split across Python, PHP, and SQLite.
 - `src/CatalogueImporter/`: PHP application code for command routing, validation, persistence, and review packet generation.
 - `database/migrations/`: SQLite schema used by the PHP layer.
 - `examples/catalogues/`: checked-in public PDF fixtures.
-- `examples/input_contract/`: fallback JSON contract fixture.
-- `examples/review_packet/`: generated review files for human inspection.
+- `examples/input_contract/`: fallback JSON contract fixtures, one per synthetic catalogue format.
+- `examples/review_packets/`: generated review files for human inspection, including contract-generated layout packets and one captured live OCR sample.
 
 ## Data Flow
 
 1. A reviewer runs `php artisan catalogue:import <pdf> --output <review-packet-dir>`.
 2. PHP calls the Python extractor as a subprocess with `PYTHONPATH=python`.
-3. Python uses the default `local_text` provider or an optional provider such as `mistral_ocr`, then emits normalized JSON with source evidence and preliminary warnings, including common Layout B label variants.
+3. Python uses the default `local_text` provider or an optional provider such as `mistral_ocr`, then emits normalized JSON with source evidence and preliminary warnings for linecard, card-grid, and family-matrix layouts.
 4. PHP validates the contract and adds deterministic warnings.
 5. PHP migrates and writes to SQLite.
 6. PHP writes `index.html`, `draft_items.json`, `draft_items.csv`, and `warnings.json`.
 
-The fallback command starts at step 4 by reading a checked-in JSON contract generated from the same public item set as the main PDF fixture. The optional Mistral OCR path still enters the same downstream validation, SQLite, and review-packet flow after OCR.
+The fallback command starts at step 4 by reading a checked-in JSON contract generated from the same public item set as a synthetic PDF fixture. The optional Mistral OCR path still enters the same downstream validation, SQLite, and review-packet flow after OCR.
 
 ## Why The Boundary Is Useful
 
