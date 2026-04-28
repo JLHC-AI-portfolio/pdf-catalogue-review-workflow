@@ -1,4 +1,4 @@
-# Community Catalogue Importer
+# PDF/OCR Catalogue Review Workflow
 
 Prepare a workshop catalogue import for review: the checked-in packet set shows three catalogue layouts plus one live OCR sample, with the source evidence a person should check before accepting any item.
 
