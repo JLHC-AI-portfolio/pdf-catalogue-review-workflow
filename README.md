@@ -1,5 +1,7 @@
 # PDF/OCR Catalogue Review Workflow
 
+This repo demonstrates a review-first document extraction workflow: varied catalogue-style PDFs go in; structured draft records, validation warnings, CSV/JSON/SQLite outputs, and human-review packets come out.
+
 Prepare a workshop catalogue import for review: the checked-in packet set shows three catalogue layouts plus one live OCR sample, with the source evidence a person should check before accepting any item.
 
 Start with the packet index: [examples/review_packets/README.md](examples/review_packets/README.md). For the quickest rendered proof surface after cloning, open [examples/review_packets/municipal-maintenance-linecard/index.html](examples/review_packets/municipal-maintenance-linecard/index.html). Each packet shows the source fixture, extraction path, extractor provider, detected layout, draft count, warning count, draft table, coordinator decision cues, and one evidence-to-decision example before any raw JSON needs to be opened.
